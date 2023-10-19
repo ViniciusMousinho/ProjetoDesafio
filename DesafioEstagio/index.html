@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Cadastro Fornecedor</title>
+</head>
+<body>
+
+        <h1 id="title">CADASTRO FORNECEDOR/PRODUTO</h1>
+
+    <div class="container">
+        <form id="cadastroFornecedor">
+            <section class="header">
+                <h2 class="h2">Dados do Fornecedor</h2>
+            </section>
+            <div id="form" class="form">
+                <div class="form-content">
+                    <label for="razao-social">Razão Social</label>
+                    <input id="razao-social" type="text" name="razao-social" required autocomplete="off">
+                </div>
+                <div class="form-content">
+                    <label for="cnpj">CNPJ</label>
+                    <input id="cnpj" type="text" name="cnpj" required autocomplete="off" minlength="14" maxlength="14">
+                </div>
+                <div class="form-content">
+                    <label for="nome-fantasia">Nome Fantasia</label>
+                    <input id="nome-fantasia" type="text" name="nome-fantasia" required autocomplete="off">
+                </div>
+                <div class="form-content">
+                    <label for="inscricao-estadual">Inscrição Estadual</label>
+                    <input id="inscricao-estadual" type="text" name="inscricao-estadual" autocomplete="off">
+                </div>
+                <div class="form-content">
+                    <label for="cep">CEP</label>
+                    <input id="cep" type="text" name="cep" required autocomplete="off" minlength="8" maxlength="8" data-input>
+            
+                </div>
+                <div class="form-content">
+                    <label for="inscricao-municipal">Inscrição Municipal</label>
+                    <input id="inscricao-municipal" type="text" name="inscricao-municipal" autocomplete="off">
+                </div>
+                <fieldset disabled id="fieldset">
+                    <div class="form-content">
+                        <label for="endereco">Endereço</label>
+                        <input id="endereco" type="text" name="endereco" required autocomplete="off" data-input>
+                    </div>
+                </fieldset>
+                <div class="form-content">
+                    <label for="numero">Número</label>
+                    <input id="numero" type="text" name="numero" required autocomplete="off">
+                </div>
+                <div class="form-content">
+                    <label for="complemento">Complemento</label>
+                    <input id="complemento" type="text" name="complemento" required autocomplete="off" data-input>
+                </div>
+                <fieldset disabled id="fieldset">
+                    <div class="form-content">
+                        <label for="bairro">Bairro</label>
+                        <input id="bairro" type="text" name="bairro" required autocomplete="off" data-input>
+                    </div>
+                </fieldset>
+                <fieldset disabled id="fieldset">
+                    <div class="form-content">
+                        <label for="municipio">Municipio</label>
+                        <input id="municipio" type="text" name="municipio" required autocomplete="off" data-input>
+                    </div>
+                </fieldset>
+                <fieldset disabled id="fieldset">
+                    <div class="form-content">
+                        <label for="estado">Estado</label>
+                        <input id="estado" type="text" name="estado" required autocomplete="off" data-input>
+                    </div>
+                </fieldset>
+            
+                <div class="form-content">
+                    <label for="pessoactt">Nome da Pessoa de Contato</label>
+                    <input id="pessoactt" type="text" name="pessoactt" required autocomplete="off">
+                </div>
+                <div class="form-content">
+                    <label for="telefone">Telefone</label>
+                    <input id="telefone" type="tel" name="telefone" required autocomplete="off">
+                </div>
+                <div class="form-content">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" required>
+                </div>
+            </div>
+            <section class="header">
+                <h3 class="h3">Produtos</h2>
+            </section>
+            <div id="formprodutos" class="formprodutos" >
+                <div class="borderproduto">
+                    <img src="imagens/caixa.png" alt="logocaixa" id="logocaixa">
+                    <img src="imagens/lixeira.png" alt="excluir" id="logolixeira">
+                    <p id="tagproduto"> Produto - 1</p>
+            
+                    <div class="produto">
+                        <div class="inputprodutos">
+                            <label for="produto">Produto</label>
+                            <input type="text" id="produto" name="produto" required>
+                        </div>
+            
+                        <div class="inputprodutos">
+                            <label for="und.medida">UND. Medida </label>
+                            <select name="und.medida" id="und.medida" required>
+                                <option value="R$-Real">Real</option>
+                                <option value="US$-Dolar">Dolar</option>
+                                <option value="€-Euro">Euro</option>
+                            </select>
+                        </div>
+                        <div class="inputprodutos">
+                            <label for="qtdestoque">QDTDE. em Estoque</label>
+                            <input type="number" id="qtdestoque" name="qtdestoque" required value="" onblur="calcular()">
+                        </div>
+                        <div class="inputprodutos">
+                            <label for="valorunitario">Valor Unitário</label>
+                            <input type="text" id="valorunitario" name="valorunitario" required value="" onblur="calcular()">
+                        </div>
+                        <fieldset disabled id="fieldset">
+                            <div class="inputprodutos">
+                                    <label for="valortotal">Valor Total</label>
+                                    <input type="text" id="valortotal" name="valortotal">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="borderproduto2" id="borderproduto2">
+                    <img src="imagens/caixa.png" alt="logocaixa" id="logocaixa2">
+                    <img src="imagens/lixeira.png" alt="excluir" id="logolixeira2" onclick="excluirProduto()" >
+                    <p id="tagproduto"> Produto - 2</p>
+            
+                    <div class="produto">
+                        <div class="inputprodutos">
+                            <label for="produto">Produto</label>
+                            <input type="text" id="produto" name="produto" >
+                        </div>
+            
+                        <div class="inputprodutos">
+                            <label for="und.medida">UND. Medida </label>
+                            <select name="und.medida" id="und.medida" required>
+                                <option value="R$-Real">Real</option>
+                                <option value="US$-Dolar">Dolar</option>
+                                <option value="€-Euro">Euro</option>
+                            </select>
+                        </div>
+                        <div class="inputprodutos">
+                            <label for="qtdestoque">QDTDE. em Estoque</label>
+                            <input type="number" id="qtdestoque2" name="qtdestoque" onblur="calcular2()">
+                        </div>
+                        <div class="inputprodutos">
+                            <label for="valorunitario">Valor Unitário</label>
+                            <input type="text" id="valorunitario2" name="valorunitario" onblur="calcular2()">
+                        </div>
+                        <fieldset disabled id="fieldset">
+                            <div class="inputprodutos">
+                                <label for="valortotal">Valor Total</label>
+                                 <input type="text" id="valortotal2" name="valortotal" >
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <span id="Addbutton" onclick="addproduto()">Adicionar Produto</span>
+            </div>
+            <div id="anexo" class="anexo">
+                <section class="header">
+                    <h4 class="h4">anexos</h4>
+                </section>
+                <div class="borderanexoOut">
+                    <div class="borderanexoIN">
+                     <p>itens</p>
+                         <img id="logolixeira3" src="imagens/lixeira.png" alt="excluir">
+                         <img id="btndownload" src="imagens/olho.png" alt="download">
+                         <label  id="anexo1" >
+                            <input type="file"/>
+                            Documento anexo 1
+                          </label>
+
+                          <img id="logolixeira4" src="imagens/lixeira.png" alt="excluir">
+                         <img id="btndownload2" src="imagens/olho.png" alt="download">
+                         <label  id="anexo2" >
+                            <input type="file"/>
+                            Documento anexo 2
+                          </label>
+                    </div>
+                    <span id="anexobutton">Incluir Anexos</span>
+                </div>
+            </div>
+            <button onclick="openModal()" type="submit" id="salvarFornecedor">Salvar Fornecedor</button>
+        </form>
+            <div id="fade" class="hide"></div>
+            <div id="modal" class="hide">
+                <div class="modal-header">
+                    <h2>Os dados foram salvos</h2>
+                    <button id="close-modal" onclick="fecharModal()">Fechar</button>
+                </div>
+            </div>
+    </div>
+    <script src="script/script.js"></script>
+    <script src="script/salvarfornecedor.js"></script>
+</body>
+</html>
